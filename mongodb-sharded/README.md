@@ -96,7 +96,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `auth.rootUser`                                      | MongoDB(&reg;) root user                                                                                                                                  | `root`                    |
 | `auth.rootPassword`                                  | MongoDB(&reg;) root password                                                                                                                              | `""`                      |
 | `auth.replicaSetKey`                                 | Key used for authentication in the replicaset (only when `architecture=replicaset`)                                                                       | `""`                      |
-| `auth.existingSecret`                                | Existing secret with MongoDB(&reg;) credentials (keys: `mongodb-password`, `mongodb-root-password`, ` mongodb-replica-set-key`)                           | `""`                      |
+| `auth.existingSecret`                                | Existing secret with MongoDB(&reg;) credentials (keys: `mongodb-password`, `mongodb-root-password`, `mongodb-replica-set-key`)                            | `""`                      |
 | `auth.usePasswordFile`                               | Mount credentials as files instead of using environment variables                                                                                         | `false`                   |
 | `shards`                                             | Number of shards to be created                                                                                                                            | `2`                       |
 | `common.mongodbEnableNumactl`                        | Enable launch MongoDB instance prefixed with "numactl --interleave=all"                                                                                   | `false`                   |
@@ -143,6 +143,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `service.extraPorts`                                 | Extra ports to expose (normally used with the `sidecar` value)                                                                                            | `[]`                      |
 | `service.sessionAffinity`                            | Session Affinity for Kubernetes service, can be "None" or "ClientIP"                                                                                      | `None`                    |
 | `service.sessionAffinityConfig`                      | Additional settings for the sessionAffinity                                                                                                               | `{}`                      |
+| `service.headless.annotations`                       | Annotations for the headless service.                                                                                                                     | `{}`                      |
 
 ### Config Server parameters
 
